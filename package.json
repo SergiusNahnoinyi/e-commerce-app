@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@sanity/client": "^3.4.1",
@@ -23,6 +27,14 @@
   },
   "devDependencies": {
     "eslint": "^8.33.0",
-    "eslint-config-next": "^13.1.6"
+    "eslint-config-next": "^13.1.6",
+    "eslint-config-prettier": "^8.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint --fix",
+    "*.{js,jsx,css,json,md}": "prettier --write"
   }
 }
