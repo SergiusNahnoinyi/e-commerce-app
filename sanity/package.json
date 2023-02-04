@@ -29,9 +29,15 @@
     "typescript": "^4.0.0"
   },
   "prettier": {
-    "semi": false,
-    "printWidth": 100,
-    "bracketSpacing": false,
-    "singleQuote": true
+    "printWidth": 80,
+    "tabWidth": 2,
+    "semi": true,
+    "useTabs": false,
+    "trailingComma": "none",
+    "singleQuote": false,
+    "bracketSpacing": true,
+    "bracketSameLine": false,
+    "arrowParens": "always",
+    "proseWrap": "always"
   }
 }
