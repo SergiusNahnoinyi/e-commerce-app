@@ -5,10 +5,10 @@
   --primary-letter-spacing: -0.02em;
   --primary-color: #324d67;
   --secondary-color: white;
-  --accent-color: blue;
-  --hover-color: orangered;
+  --accent-color: #f02d34;
+  --hover-color: blue;
   --primary-background-color: white;
-  --secondary-background-color: black;
+  --secondary-background-color: #dcdcdc;
   --primary-animation: 300ms ease-in-out;
   --secondary-animation: 600ms ease-in-out;
 }

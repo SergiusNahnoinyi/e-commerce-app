@@ -1,8 +1,14 @@
 import Head from "next/head";
 
+import Hero from "@/components/Hero/Hero";
+import Heading from "@/components/Heading/Heading";
+
+import { client } from "@/services/sanity";
+
 import styles from "./index.module.css";
 
-export default function Home() {
+export default function Home({ products, banner }) {
+  console.log(products);
   return (
     <>
       <Head>
@@ -17,12 +23,30 @@ export default function Home() {
       </Head>
       <header className={styles.header}>Header</header>
       <main className={styles.main}>
-        <hgroup className={styles.heading}>
-          <h1>Best Seller Products</h1>
-          <p>Choose the best for you</p>
-        </hgroup>
+        <Hero hero={banner[0]} />
+        <Heading />
       </main>
       <footer className={styles.footer}>Footer</footer>
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const query = '*[_type == "product"]';
+  const bannerQuery = '*[_type == "banner"]';
+
+  try {
+    const products = await client.fetch(query);
+    const banner = await client.fetch(bannerQuery);
+
+    return {
+      props: { products, banner }
+    };
+  } catch (error) {
+    console.log(error);
+
+    return {
+      props: {}
+    };
+  }
+};
