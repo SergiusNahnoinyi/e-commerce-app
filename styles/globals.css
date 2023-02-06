@@ -1,7 +1,88 @@
+/* Sets custom CSS variables */
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --primary-font-size: 16px;
+  --primary-font-weight: 400;
+  --primary-letter-spacing: -0.02em;
+  --primary-color: #324d67;
+  --secondary-color: white;
+  --accent-color: #f02d34;
+  --hover-color: blue;
+  --primary-background-color: white;
+  --secondary-background-color: #dcdcdc;
+  --primary-animation: 300ms ease-in-out;
+  --secondary-animation: 600ms ease-in-out;
+}
+
+/* Sets default settings for the body */
+html,
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif, serif;
+  font-size: var(--primary-font-size);
+  font-weight: var(--primary-font-weight);
+  letter-spacing: var(--primary-letter-spacing);
+  color: var(--primary-color);
+}
+
+/* Specifies box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Removes padding */
+ul,
+ol,
+button {
+  padding: 0;
+}
+
+/* Removes margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd,
+input {
+  margin: 0;
+}
+
+/* Removes default styling for all ul and li */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Resets links to the default styles */
+a {
+  display: inline-flex;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Specifies images settings */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherits fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }

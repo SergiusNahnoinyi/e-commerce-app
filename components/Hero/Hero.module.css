@@ -1,0 +1,40 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--secondary-background-color);
+}
+
+.hero__cta {
+  position: relative;
+  align-self: center;
+}
+
+.hero__cta h1 {
+  font-size: 48px;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+}
+
+.hero__button {
+  position: absolute;
+  z-index: 3;
+  padding: 10px 16px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--secondary-color);
+  background-color: var(--accent-color);
+  border-radius: 15px;
+  cursor: pointer;
+  border: none;
+}
+
+.hero__banner {
+  object-fit: contain;
+}
+
+.hero__desc {
+  align-self: flex-end;
+}
