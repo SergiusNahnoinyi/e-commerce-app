@@ -15,7 +15,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>Main</main>
+      <header className={styles.header}>Header</header>
+      <main className={styles.main}>
+        <hgroup className={styles.heading}>
+          <h1>Best Seller Products</h1>
+          <p>Choose the best for you</p>
+        </hgroup>
+      </main>
+      <footer className={styles.footer}>Footer</footer>
     </>
   );
 }

@@ -2,9 +2,8 @@
 :root {
   --primary-font-size: 16px;
   --primary-font-weight: 400;
-  --primary-line-height: 20px;
   --primary-letter-spacing: -0.02em;
-  --primary-color: black;
+  --primary-color: #324d67;
   --secondary-color: white;
   --accent-color: blue;
   --hover-color: orangered;
@@ -22,7 +21,6 @@ body {
   font-family: "Montserrat", sans-serif, serif;
   font-size: var(--primary-font-size);
   font-weight: var(--primary-font-weight);
-  line-height: var(--primary-line-height);
   letter-spacing: var(--primary-letter-spacing);
   color: var(--primary-color);
 }
