@@ -12,13 +12,18 @@ export default {
       }
     },
     {
-      name: "buttonText",
-      title: "ButtonText",
+      name: "brand",
+      title: "Brand",
       type: "string"
     },
     {
-      name: "product",
-      title: "Product",
+      name: "model",
+      title: "Model",
+      type: "string"
+    },
+    {
+      name: "color",
+      title: "Color",
       type: "string"
     },
     {
@@ -27,23 +32,8 @@ export default {
       type: "string"
     },
     {
-      name: "smallText",
-      title: "SmallText",
-      type: "string"
-    },
-    {
-      name: "midText",
-      title: "MidText",
-      type: "string"
-    },
-    {
-      name: "largeText1",
-      title: "LargeText1",
-      type: "string"
-    },
-    {
-      name: "largeText2",
-      title: "LargeText2",
+      name: "features",
+      title: "Features",
       type: "string"
     },
     {
