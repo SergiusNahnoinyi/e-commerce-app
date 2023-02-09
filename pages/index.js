@@ -9,7 +9,6 @@ import { client } from "@/services/sanity";
 import styles from "./index.module.css";
 
 export default function Home({ products, banner }) {
-  console.log(products);
   return (
     <>
       <Head>
@@ -26,7 +25,7 @@ export default function Home({ products, banner }) {
       <main className={styles.main}>
         <Hero hero={banner[0]} />
         <Heading />
-        <Products />
+        <Products products={products} />
       </main>
       <footer className={styles.footer}>Footer</footer>
     </>
