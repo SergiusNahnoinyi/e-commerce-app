@@ -1,5 +1,5 @@
 import styles from "./Products.module.css";
 
 export default function Products() {
-  return <div>Products</div>;
+  return <ul className={styles.products}>Products</ul>;
 }
