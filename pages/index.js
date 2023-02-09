@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import Hero from "@/components/Hero/Hero";
 import Heading from "@/components/Heading/Heading";
+import Products from "@/components/Products/Products";
 
 import { client } from "@/services/sanity";
 
@@ -25,6 +26,7 @@ export default function Home({ products, banner }) {
       <main className={styles.main}>
         <Hero hero={banner[0]} />
         <Heading />
+        <Products />
       </main>
       <footer className={styles.footer}>Footer</footer>
     </>
