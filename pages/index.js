@@ -1,34 +1,15 @@
-import Head from "next/head";
-
 import Hero from "@/components/Hero/Hero";
 import Heading from "@/components/Heading/Heading";
 import Products from "@/components/Products/Products";
-import Footer from "@/components/Footer/Footer";
 
 import { client } from "@/services/sanity";
-
-import styles from "./index.module.css";
 
 export default function Home({ products, banner }) {
   return (
     <>
-      <Head>
-        <title>E-commerce</title>
-        <meta
-          name="description"
-          content="This is a modern e-commerce application that includes ability to add and edit
-          products, advanced carts, checkout functionalities, so you can cover real payments"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <header className={styles.header}>Header</header>
-      <main className={styles.main}>
-        <Hero hero={banner[0]} />
-        <Heading />
-        <Products products={products} />
-      </main>
-      <Footer />
+      <Hero hero={banner[0]} />
+      <Heading />
+      <Products products={products} />
     </>
   );
 }
