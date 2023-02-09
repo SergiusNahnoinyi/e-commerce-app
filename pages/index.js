@@ -3,6 +3,7 @@ import Head from "next/head";
 import Hero from "@/components/Hero/Hero";
 import Heading from "@/components/Heading/Heading";
 import Products from "@/components/Products/Products";
+import Footer from "@/components/Footer/Footer";
 
 import { client } from "@/services/sanity";
 
@@ -27,7 +28,7 @@ export default function Home({ products, banner }) {
         <Heading />
         <Products products={products} />
       </main>
-      <footer className={styles.footer}>Footer</footer>
+      <Footer />
     </>
   );
 }
