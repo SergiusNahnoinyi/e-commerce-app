@@ -2,10 +2,10 @@
   margin-bottom: 12px;
   color: var(--primary-color);
   transition: transform var(--primary-animation);
-  cursor: pointer;
 }
 
-.product__link:hover {
+.product__link:hover,
+.product__link:focus {
   transform: scale(1.02, 1.02);
 }
 
