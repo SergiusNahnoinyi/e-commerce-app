@@ -1,0 +1,19 @@
+.product__link {
+  margin-bottom: 12px;
+  color: var(--primary-color);
+  transition: transform var(--primary-animation);
+  cursor: pointer;
+}
+
+.product__link:hover {
+  transform: scale(1.02, 1.02);
+}
+
+.product__image {
+  border-radius: 15px;
+  background-color: var(--secondary-background-color);
+}
+
+.product__name {
+  margin-bottom: 6px;
+}
