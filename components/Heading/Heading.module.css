@@ -1,7 +1,7 @@
 .heading {
-  text-align: center;
-  margin: 40px 0px;
+  margin-bottom: 40px;
   color: var(--primary-color);
+  text-align: center;
 }
 
 .heading h1 {
