@@ -1,7 +1,9 @@
 import { client } from "@/services/sanity";
 
+import ProductDescription from "@/components/ProductDescription/ProductDescription";
+
 export default function ProductDetails({ product }) {
-  return <h2 style={{ textAlign: "center" }}>{product.name}</h2>;
+  return <ProductDescription product={product} />;
 }
 
 export const getStaticPaths = async () => {
