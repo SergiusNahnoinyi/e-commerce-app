@@ -3,6 +3,8 @@ import { useNextSanityImage } from "next-sanity-image";
 
 import { client } from "@/services/sanity";
 
+import Button from "../Button/Button";
+
 import styles from "./Hero.module.css";
 
 export default function Hero({ hero }) {
@@ -13,7 +15,11 @@ export default function Hero({ hero }) {
       <div className={styles.hero__cta}>
         <h2>{hero.model}</h2>
         <h1>{hero.saleTime}</h1>
-        <button className={styles.hero__button}>Shop Now</button>
+        <Button
+          title="Shop Now"
+          variant="primary"
+          className={styles.hero__button}
+        />
       </div>
       <Img
         className={styles.hero__banner}
