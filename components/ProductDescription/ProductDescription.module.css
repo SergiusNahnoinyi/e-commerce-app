@@ -1,3 +1,8 @@
+.description {
+  display: flex;
+  gap: 40px;
+}
+
 .buttons {
   display: flex;
   gap: 30px;

@@ -4,10 +4,10 @@ import styles from "./ProductDescription.module.css";
 
 export default function ProductDescription({ product }) {
   if (!product)
-    return <div style={{ textAlign: "center" }}>No data provided</div>;
+    return <h2 style={{ textAlign: "center" }}>No data provided</h2>;
 
   return (
-    <>
+    <section className={styles.description}>
       <h1 className={styles.product}>{product.name}</h1>
       <ul className={styles.buttons}>
         <li>
@@ -27,6 +27,6 @@ export default function ProductDescription({ product }) {
           />
         </li>
       </ul>
-    </>
+    </section>
   );
 }
