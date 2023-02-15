@@ -1,4 +1,5 @@
 import Img from "next/image";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 import { useNextSanityImage } from "next-sanity-image";
 
@@ -26,6 +27,14 @@ export default function ProductDescription({ product }) {
       />
       <aside>
         <h2>{product.name}</h2>
+        <p className={styles.reviews}>
+          <AiFillStar />
+          <AiFillStar />
+          <AiFillStar />
+          <AiFillStar />
+          <AiOutlineStar />
+          (20)
+        </p>
         <ul className={styles.buttons}>
           <li>
             <Button

@@ -8,6 +8,13 @@
   height: 350px;
 }
 
+.reviews {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent-color);
+}
+
 .buttons {
   display: flex;
   gap: 30px;
