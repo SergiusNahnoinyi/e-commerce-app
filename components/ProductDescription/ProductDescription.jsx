@@ -1,5 +1,10 @@
 import Img from "next/image";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import {
+  AiFillStar,
+  AiOutlineStar,
+  AiOutlineMinus,
+  AiOutlinePlus
+} from "react-icons/ai";
 
 import { useNextSanityImage } from "next-sanity-image";
 
@@ -37,7 +42,19 @@ export default function ProductDescription({ product }) {
         </p>
         <h3>Details:</h3>
         <p>{product.details}</p>
-        <p className={styles.price}>${product.price}</p>
+        <h4 className={styles.price}>${product.price}</h4>
+        <div className={styles.quantity}>
+          <h5>Quantity:</h5>
+          <div className={styles.quantity__widget}>
+            <button type="button" onClick={() => console.log("-1")}>
+              <AiOutlineMinus />
+            </button>
+            <span className={styles.quantity__num}>0</span>
+            <button type="button" onClick={() => console.log("+1")}>
+              <AiOutlinePlus />
+            </button>
+          </div>
+        </div>
         <ul className={styles.buttons}>
           <li>
             <Button

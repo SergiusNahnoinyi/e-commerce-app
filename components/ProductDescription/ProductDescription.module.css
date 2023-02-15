@@ -21,6 +21,22 @@
   color: var(--accent-color);
 }
 
+.quantity {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.quantity__widget {
+  border: 1px solid gray;
+  padding: 6px;
+}
+
+.quantity__num {
+  border-right: 1px solid gray;
+  font-size: 20px;
+}
+
 .buttons {
   display: flex;
   gap: 30px;
