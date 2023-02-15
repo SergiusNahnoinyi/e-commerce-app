@@ -24,25 +24,27 @@ export default function ProductDescription({ product }) {
         className={styles.description__image}
         alt={product.name}
       />
-      <h1 className={styles.product}>{product.name}</h1>
-      <ul className={styles.buttons}>
-        <li>
-          <Button
-            title="Add to Cart"
-            variant="secondary"
-            outlined
-            white
-            onClick={() => console.log("Add to Cart")}
-          />
-        </li>
-        <li>
-          <Button
-            title="Buy Now"
-            variant="secondary"
-            onClick={() => console.log("Buy Now")}
-          />
-        </li>
-      </ul>
+      <aside>
+        <h2>{product.name}</h2>
+        <ul className={styles.buttons}>
+          <li>
+            <Button
+              title="Add to Cart"
+              variant="secondary"
+              outlined
+              white
+              onClick={() => console.log("Add to Cart")}
+            />
+          </li>
+          <li>
+            <Button
+              title="Buy Now"
+              variant="secondary"
+              onClick={() => console.log("Buy Now")}
+            />
+          </li>
+        </ul>
+      </aside>
     </section>
   );
 }
