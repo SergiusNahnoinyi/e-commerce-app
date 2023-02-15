@@ -1,0 +1,33 @@
+.primary {
+  padding: 10px 16px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--secondary-color);
+  background-color: var(--accent-color);
+  border-radius: 15px;
+  cursor: pointer;
+  border: none;
+  transition: transform var(--primary-animation);
+}
+
+.primary:hover,
+.primary:focus {
+  transform: scale(1.03);
+}
+
+.secondary {
+  composes: primary;
+  width: 200px;
+  height: 40px;
+  padding: 0px;
+  border-radius: 0px;
+}
+
+.secondary.isOutlined {
+  border: 1px solid black;
+}
+
+.secondary.isWhite {
+  color: var(--accent-color);
+  background-color: var(--secondary-color);
+}
