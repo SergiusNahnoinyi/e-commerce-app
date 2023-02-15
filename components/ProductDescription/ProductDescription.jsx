@@ -35,6 +35,9 @@ export default function ProductDescription({ product }) {
           <AiOutlineStar />
           (20)
         </p>
+        <h3>Details:</h3>
+        <p>{product.details}</p>
+        <p className={styles.price}>${product.price}</p>
         <ul className={styles.buttons}>
           <li>
             <Button
