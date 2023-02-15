@@ -1,6 +1,6 @@
 import { client } from "@/services/sanity";
 
-import ProductDescription from "@/components/ProductDescription/ProductDescription";
+import ProductDescription from "@/components/ProductDetailsPage/ProductDescription";
 
 export default function ProductDetails({ product }) {
   return <ProductDescription product={product} />;

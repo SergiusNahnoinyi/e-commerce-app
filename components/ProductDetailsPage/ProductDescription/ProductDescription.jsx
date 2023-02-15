@@ -5,8 +5,8 @@ import { useNextSanityImage } from "next-sanity-image";
 
 import { client } from "@/services/sanity";
 
-import Button from "../Button/Button";
-import QuantityButton from "../QuantityButton/QuantityButton";
+import Button from "../../Common/Button";
+import QuantityButton from "../QuantityButton";
 
 import styles from "./ProductDescription.module.css";
 

@@ -3,7 +3,7 @@ import { useNextSanityImage } from "next-sanity-image";
 
 import { client } from "@/services/sanity";
 
-import Button from "../Button/Button";
+import Button from "../../Common/Button/Button";
 
 import styles from "./Hero.module.css";
 
