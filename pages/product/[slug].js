@@ -1,13 +1,15 @@
 import { client } from "@/services/sanity";
 
-import Heading from "@/components/Common/Heading";
 import ProductDescription from "@/components/ProductDetailsPage/ProductDescription";
+import Heading from "@/components/Common/Heading";
+import Products from "@/components/Common/Products";
 
-export default function ProductDetails({ product }) {
+export default function ProductDetails({ product, products }) {
   return (
     <>
       <ProductDescription product={product} />
       <Heading title="Perfect match" subtitle="You may also like" />
+      <Products products={products} />
     </>
   );
 }
@@ -42,12 +44,14 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
   const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
+  const productsQuery = '*[_type == "product"]';
 
   try {
     const product = await client.fetch(query);
+    const products = await client.fetch(productsQuery);
 
     return {
-      props: { product }
+      props: { product, products }
     };
   } catch (error) {
     return {

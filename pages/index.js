@@ -1,6 +1,6 @@
 import Heading from "@/components/Common/Heading";
 import Hero from "@/components/HomePage/Hero";
-import Products from "@/components/HomePage/Products";
+import Products from "@/components/Common/Products";
 
 import { client } from "@/services/sanity";
 
