@@ -1,6 +1,6 @@
-import Hero from "@/components/Hero/Hero";
-import Heading from "@/components/Heading/Heading";
-import Products from "@/components/Products/Products";
+import Heading from "@/components/Common/Heading";
+import Hero from "@/components/HomePage/Hero";
+import Products from "@/components/Common/Products";
 
 import { client } from "@/services/sanity";
 
@@ -8,7 +8,10 @@ export default function Home({ products, banner }) {
   return (
     <>
       <Hero hero={banner[0]} />
-      <Heading />
+      <Heading
+        title="Best Seller Products"
+        subtitle="Choose the best for you"
+      />
       <Products products={products} />
     </>
   );

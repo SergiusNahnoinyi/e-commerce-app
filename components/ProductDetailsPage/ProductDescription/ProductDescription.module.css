@@ -1,0 +1,43 @@
+.description {
+  display: flex;
+  gap: 40px;
+}
+
+.description__image {
+  width: 350px;
+  height: 350px;
+}
+
+.reviews {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent-color);
+}
+
+.price {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.quantity {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.quantity__widget {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.quantity__num {
+  font-size: 24px;
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+}
