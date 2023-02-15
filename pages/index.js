@@ -8,7 +8,10 @@ export default function Home({ products, banner }) {
   return (
     <>
       <Hero hero={banner[0]} />
-      <Heading />
+      <Heading
+        title="Best Seller Products"
+        subtitle="Choose the best for you"
+      />
       <Products products={products} />
     </>
   );

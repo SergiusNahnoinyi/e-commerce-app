@@ -1,9 +1,15 @@
 import { client } from "@/services/sanity";
 
+import Heading from "@/components/Common/Heading";
 import ProductDescription from "@/components/ProductDetailsPage/ProductDescription";
 
 export default function ProductDetails({ product }) {
-  return <ProductDescription product={product} />;
+  return (
+    <>
+      <ProductDescription product={product} />
+      <Heading title="Perfect match" subtitle="You may also like" />
+    </>
+  );
 }
 
 export const getStaticPaths = async () => {
