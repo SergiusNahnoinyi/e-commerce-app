@@ -3,6 +3,11 @@
   gap: 40px;
 }
 
+.description__image {
+  width: 350px;
+  height: 350px;
+}
+
 .buttons {
   display: flex;
   gap: 30px;
