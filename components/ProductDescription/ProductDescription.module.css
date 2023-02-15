@@ -28,13 +28,13 @@
 }
 
 .quantity__widget {
-  border: 1px solid gray;
-  padding: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .quantity__num {
-  border-right: 1px solid gray;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .buttons {

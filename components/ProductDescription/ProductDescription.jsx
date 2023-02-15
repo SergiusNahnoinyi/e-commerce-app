@@ -1,16 +1,12 @@
 import Img from "next/image";
-import {
-  AiFillStar,
-  AiOutlineStar,
-  AiOutlineMinus,
-  AiOutlinePlus
-} from "react-icons/ai";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 import { useNextSanityImage } from "next-sanity-image";
 
 import { client } from "@/services/sanity";
 
 import Button from "../Button/Button";
+import QuantityButton from "../QuantityButton/QuantityButton";
 
 import styles from "./ProductDescription.module.css";
 
@@ -46,13 +42,9 @@ export default function ProductDescription({ product }) {
         <div className={styles.quantity}>
           <h5>Quantity:</h5>
           <div className={styles.quantity__widget}>
-            <button type="button" onClick={() => console.log("-1")}>
-              <AiOutlineMinus />
-            </button>
+            <QuantityButton variant="minus" onClick={() => console.log("-1")} />
             <span className={styles.quantity__num}>0</span>
-            <button type="button" onClick={() => console.log("+1")}>
-              <AiOutlinePlus />
-            </button>
+            <QuantityButton variant="plus" onClick={() => console.log("+1")} />
           </div>
         </div>
         <ul className={styles.buttons}>
