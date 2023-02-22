@@ -3,7 +3,8 @@ import { useNextSanityImage } from "next-sanity-image";
 
 import { client } from "@/services/sanity";
 
-import Button from "../../Common/Button/Button";
+import Button from "@/components/Common/Button/Button";
+import Container from "@/components/Common/Container";
 
 import styles from "./Hero.module.css";
 
@@ -11,28 +12,19 @@ export default function Hero({ hero }) {
   const imageProps = useNextSanityImage(client, hero.image);
 
   return (
-    <div className={styles.hero}>
-      <div className={styles.hero__cta}>
-        <h2>{hero.model}</h2>
-        <h1>{hero.saleTime}</h1>
-        <Button
-          title="Shop Now"
-          variant="primary"
-          className={styles.hero__button}
-        />
-      </div>
+    <Container className={styles.hero__container}>
       <Img
+        {...imageProps}
+        placeholder="blur"
+        blurDataURL={hero.image.asset._ref}
         className={styles.hero__banner}
-        loader={imageProps.loader}
-        src={imageProps.src}
         alt="Headphones"
-        priority
-        fill
       />
-      <div className={styles.hero__desc}>
-        <h3>Description</h3>
-        <p>{hero.desc}</p>
+      <div className={styles.hero__description}>
+        <h1 className={styles.hero__title}>{hero.saleTime}</h1>
+        <h2 className={styles.hero__subtitle}>{hero.desc}</h2>
+        <Button title="Shop Now" variant="primary" />
       </div>
-    </div>
+    </Container>
   );
 }
