@@ -1,0 +1,15 @@
+.quantity {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.quantity__widget {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.quantity__num {
+  font-size: 24px;
+}

@@ -1,72 +1,55 @@
-import Img from "next/image";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import { useState } from "react";
 
-import { useNextSanityImage } from "next-sanity-image";
-
-import { client } from "@/services/sanity";
-
-import Button from "@/components/Common/Button";
 import Container from "@/components/Common/Container";
+import CustomImage from "@/components/Common/CustomImage";
 
-import QuantityButton from "../QuantityButton";
+import ReviewsBlock from "@/components/ProductDetailsPage/ReviewsBlock";
+import QuantityBlock from "@/components/ProductDetailsPage/QuantityBlock";
+import BuyBlock from "@/components/ProductDetailsPage/BuyBlock";
 
+import clsx from "clsx";
 import styles from "./ProductDescription.module.css";
 
 export default function ProductDescription({ product }) {
-  const imageProps = useNextSanityImage(client, product.image[0]);
+  const [index, setIndex] = useState(0);
 
   if (!product)
     return <h2 style={{ textAlign: "center" }}>No data provided</h2>;
 
   return (
     <Container className={styles.description}>
-      <Img
-        {...imageProps}
-        style={{ maxWidth: "100%", height: "auto" }}
-        placeholder="blur"
-        blurDataURL={product.image[0].asset._ref}
-        className={styles.description__image}
-        alt={product.name}
-      />
-      <aside>
+      <figure>
+        <CustomImage
+          className={styles.description__image}
+          src={product.image[0].asset._ref && product.image[index].asset._ref}
+          alt={product.name}
+          width={200}
+          height={200}
+        />
+        <figcaption className={styles.description__images}>
+          {product.image.map((image, idx) => (
+            <CustomImage
+              onMouseEnter={() => setIndex(idx)}
+              className={clsx(styles.images, {
+                [styles["isSelected"]]: idx === index
+              })}
+              src={image.asset._ref}
+              alt={product.name}
+              key={image._key}
+              width={100}
+              height={100}
+            />
+          ))}
+        </figcaption>
+      </figure>
+      <aside className={styles.aside}>
         <h2>{product.name}</h2>
-        <p className={styles.reviews}>
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
-          <AiOutlineStar />
-          (20)
-        </p>
+        <ReviewsBlock />
         <h3>Details:</h3>
         <p>{product.details}</p>
         <h4 className={styles.price}>${product.price}</h4>
-        <div className={styles.quantity}>
-          <h5>Quantity:</h5>
-          <div className={styles.quantity__widget}>
-            <QuantityButton variant="minus" onClick={() => console.log("-1")} />
-            <span className={styles.quantity__num}>0</span>
-            <QuantityButton variant="plus" onClick={() => console.log("+1")} />
-          </div>
-        </div>
-        <ul className={styles.buttons}>
-          <li>
-            <Button
-              title="Add to Cart"
-              variant="secondary"
-              outlined
-              white
-              onClick={() => console.log("Add to Cart")}
-            />
-          </li>
-          <li>
-            <Button
-              title="Buy Now"
-              variant="secondary"
-              onClick={() => console.log("Buy Now")}
-            />
-          </li>
-        </ul>
+        <QuantityBlock />
+        <BuyBlock />
       </aside>
     </Container>
   );
