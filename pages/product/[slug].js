@@ -9,6 +9,9 @@ import Products from "@/components/Common/Products";
 import styles from "./index.module.css";
 
 export default function ProductDetails({ product, products }) {
+  if (!product || !products)
+    return <h2 style={{ textAlign: "center" }}>Loading product ...</h2>;
+
   return (
     <>
       <section className={styles.description}>
@@ -42,7 +45,7 @@ export const getStaticPaths = async () => {
 
     return {
       paths,
-      fallback: "blocking"
+      fallback: true
     };
   } catch (error) {
     return {
@@ -60,8 +63,18 @@ export const getStaticProps = async ({ params: { slug } }) => {
     const product = await client.fetch(query);
     const products = await client.fetch(productsQuery);
 
+    if (!product || !products) {
+      return {
+        redirect: {
+          destination: "/",
+          permanent: false
+        }
+      };
+    }
+
     return {
-      props: { product, products }
+      props: { product, products },
+      revalidate: 5
     };
   } catch (error) {
     return {

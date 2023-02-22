@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import styles from "./CartButton.module.css";
 
-export default function Button({ className, onClick }) {
+export default function CartButton({ className, onClick }) {
   return (
     <button
       type="button"
