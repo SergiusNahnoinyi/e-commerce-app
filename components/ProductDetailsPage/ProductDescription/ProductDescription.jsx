@@ -49,7 +49,7 @@ export default function ProductDescription({ product }) {
         <p>{product.details}</p>
         <h4 className={styles.price}>${product.price}</h4>
         <QuantityBlock />
-        <BuyBlock />
+        <BuyBlock product={product} />
       </aside>
     </Container>
   );
