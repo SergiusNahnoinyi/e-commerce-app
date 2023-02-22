@@ -20,7 +20,7 @@ export default function Home({ products, banner }) {
             title="Best Seller Products"
             subtitle="Choose the best for you"
           />
-          <Products products={products} />
+          <Products products={products} className={styles.products__list} />
         </Container>
       </section>
     </>
