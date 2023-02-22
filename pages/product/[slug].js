@@ -42,7 +42,7 @@ export const getStaticPaths = async () => {
 
     return {
       paths,
-      fallback: "blocking"
+      fallback: true
     };
   } catch (error) {
     return {
@@ -60,8 +60,18 @@ export const getStaticProps = async ({ params: { slug } }) => {
     const product = await client.fetch(query);
     const products = await client.fetch(productsQuery);
 
+    if (!product || !products) {
+      return {
+        redirect: {
+          destination: "/",
+          permanent: false
+        }
+      };
+    }
+
     return {
-      props: { product, products }
+      props: { product, products },
+      revalidate: 5
     };
   } catch (error) {
     return {
