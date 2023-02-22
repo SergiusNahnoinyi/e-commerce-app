@@ -1,14 +1,14 @@
 import Img from "next/image";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 import { useNextSanityImage } from "next-sanity-image";
 
 import { client } from "@/services/sanity";
 
-import Button from "@/components/Common/Button";
 import Container from "@/components/Common/Container";
 
-import QuantityButton from "../QuantityButton";
+import ReviewsBlock from "@/components/ProductDetailsPage/ReviewsBlock";
+import QuantityBlock from "@/components/ProductDetailsPage/QuantityBlock";
+import BuyBlock from "@/components/ProductDetailsPage/BuyBlock";
 
 import styles from "./ProductDescription.module.css";
 
@@ -22,51 +22,19 @@ export default function ProductDescription({ product }) {
     <Container className={styles.description}>
       <Img
         {...imageProps}
-        style={{ maxWidth: "100%", height: "auto" }}
         placeholder="blur"
         blurDataURL={product.image[0].asset._ref}
         className={styles.description__image}
         alt={product.name}
       />
-      <aside>
+      <aside className={styles.aside}>
         <h2>{product.name}</h2>
-        <p className={styles.reviews}>
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
-          <AiOutlineStar />
-          (20)
-        </p>
+        <ReviewsBlock />
         <h3>Details:</h3>
         <p>{product.details}</p>
         <h4 className={styles.price}>${product.price}</h4>
-        <div className={styles.quantity}>
-          <h5>Quantity:</h5>
-          <div className={styles.quantity__widget}>
-            <QuantityButton variant="minus" onClick={() => console.log("-1")} />
-            <span className={styles.quantity__num}>0</span>
-            <QuantityButton variant="plus" onClick={() => console.log("+1")} />
-          </div>
-        </div>
-        <ul className={styles.buttons}>
-          <li>
-            <Button
-              title="Add to Cart"
-              variant="secondary"
-              outlined
-              white
-              onClick={() => console.log("Add to Cart")}
-            />
-          </li>
-          <li>
-            <Button
-              title="Buy Now"
-              variant="secondary"
-              onClick={() => console.log("Buy Now")}
-            />
-          </li>
-        </ul>
+        <QuantityBlock />
+        <BuyBlock />
       </aside>
     </Container>
   );
