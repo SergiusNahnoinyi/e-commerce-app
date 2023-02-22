@@ -1,11 +1,14 @@
 import Layout from "@/components/Common/Layout";
+import { StateContext } from "@/context/StateContext";
 
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <StateContext>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </StateContext>
   );
 }
