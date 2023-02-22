@@ -9,6 +9,9 @@ import Products from "@/components/Common/Products";
 import styles from "./index.module.css";
 
 export default function ProductDetails({ product, products }) {
+  if (!product || !products)
+    return <h2 style={{ textAlign: "center" }}>Loading product ...</h2>;
+
   return (
     <>
       <section className={styles.description}>
