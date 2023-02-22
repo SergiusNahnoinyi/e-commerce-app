@@ -9,12 +9,6 @@
   .hero {
     margin-bottom: 25px;
   }
-
-  .products__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
-  }
 }
 
 @media (min-width: 1280px) {
