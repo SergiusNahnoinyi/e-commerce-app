@@ -1,10 +1,5 @@
-import Img from "next/image";
-
-import { useNextSanityImage } from "next-sanity-image";
-
-import { client } from "@/services/sanity";
-
 import Container from "@/components/Common/Container";
+import CustomImage from "@/components/Common/CustomImage";
 
 import ReviewsBlock from "@/components/ProductDetailsPage/ReviewsBlock";
 import QuantityBlock from "@/components/ProductDetailsPage/QuantityBlock";
@@ -13,19 +8,17 @@ import BuyBlock from "@/components/ProductDetailsPage/BuyBlock";
 import styles from "./ProductDescription.module.css";
 
 export default function ProductDescription({ product }) {
-  const imageProps = useNextSanityImage(client, product.image[0]);
-
   if (!product)
     return <h2 style={{ textAlign: "center" }}>No data provided</h2>;
 
   return (
     <Container className={styles.description}>
-      <Img
-        {...imageProps}
-        placeholder="blur"
-        blurDataURL={product.image[0].asset._ref}
+      <CustomImage
         className={styles.description__image}
+        src={product.image[0].asset._ref}
         alt={product.name}
+        width={200}
+        height={200}
       />
       <aside className={styles.aside}>
         <h2>{product.name}</h2>

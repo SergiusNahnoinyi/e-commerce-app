@@ -1,4 +1,5 @@
 import sanityClient from "@sanity/client";
+import sanityImage from "@sanity/image-url";
 
 export const client = sanityClient({
   projectId: "gjxfcm2s",
@@ -7,3 +8,5 @@ export const client = sanityClient({
   useCdn: true,
   token: process.env.NEXT_PUBLIC_SANITY_TOKEN
 });
+
+export const imageBuilder = sanityImage(client);
