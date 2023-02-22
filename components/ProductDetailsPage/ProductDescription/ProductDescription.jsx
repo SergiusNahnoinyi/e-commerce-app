@@ -5,7 +5,9 @@ import { useNextSanityImage } from "next-sanity-image";
 
 import { client } from "@/services/sanity";
 
-import Button from "../../Common/Button";
+import Button from "@/components/Common/Button";
+import Container from "@/components/Common/Container";
+
 import QuantityButton from "../QuantityButton";
 
 import styles from "./ProductDescription.module.css";
@@ -17,7 +19,7 @@ export default function ProductDescription({ product }) {
     return <h2 style={{ textAlign: "center" }}>No data provided</h2>;
 
   return (
-    <section className={styles.description}>
+    <Container className={styles.description}>
       <Img
         {...imageProps}
         style={{ maxWidth: "100%", height: "auto" }}
@@ -66,6 +68,6 @@ export default function ProductDescription({ product }) {
           </li>
         </ul>
       </aside>
-    </section>
+    </Container>
   );
 }

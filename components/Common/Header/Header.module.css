@@ -1,8 +1,7 @@
-.header {
+.header__container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
-  padding: 30px;
+  align-items: center;
 }
 
 .cart__button {
