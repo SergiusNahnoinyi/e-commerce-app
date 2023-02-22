@@ -9,7 +9,7 @@ import styles from "./CustomImage.module.css";
 export default function CustomImage({
   src,
   alt,
-  quality = 80,
+  quality = 100,
   className,
   ...props
 }) {
