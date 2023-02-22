@@ -1,10 +1,18 @@
 import Button from "@/components/Common/Button/Button";
 
-import clsx from "clsx";
+import { useStateContext } from "@/context/StateContext";
 
+import clsx from "clsx";
 import styles from "./BuyBlock.module.css";
 
-export default function BuyBlock({ className }) {
+export default function BuyBlock({ product, className }) {
+  const { qty, onAdd, setShowCart } = useStateContext();
+
+  const handleBuyNow = () => {
+    onAdd(product, qty);
+    setShowCart(true);
+  };
+
   return (
     <ul className={clsx(styles.buy, className)}>
       <li>
@@ -13,15 +21,11 @@ export default function BuyBlock({ className }) {
           variant="secondary"
           outlined
           white
-          onClick={() => console.log("Add to Cart")}
+          onClick={() => onAdd(product, qty)}
         />
       </li>
       <li>
-        <Button
-          title="Buy Now"
-          variant="secondary"
-          onClick={() => console.log("Buy Now")}
-        />
+        <Button title="Buy Now" variant="secondary" onClick={handleBuyNow} />
       </li>
     </ul>
   );
