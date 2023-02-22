@@ -1,0 +1,17 @@
+@media (min-width: 320px) {
+  .description {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .description {
+    margin-bottom: 25px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .description {
+    margin-bottom: 30px;
+  }
+}

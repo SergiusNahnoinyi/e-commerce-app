@@ -1,0 +1,17 @@
+@media (min-width: 320px) {
+  .hero {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    margin-bottom: 25px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero {
+    margin-bottom: 30px;
+  }
+}
