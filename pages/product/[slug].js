@@ -1,15 +1,25 @@
 import { client } from "@/services/sanity";
 
 import ProductDescription from "@/components/ProductDetailsPage/ProductDescription";
+
+import Container from "@/components/Common/Container";
 import Heading from "@/components/Common/Heading";
 import Products from "@/components/Common/Products";
+
+import styles from "./index.module.css";
 
 export default function ProductDetails({ product, products }) {
   return (
     <>
-      <ProductDescription product={product} />
-      <Heading title="Perfect match" subtitle="You may also like" />
-      <Products products={products} />
+      <section className={styles.description}>
+        <ProductDescription product={product} />
+      </section>
+      <section>
+        <Container>
+          <Heading title="Perfect match" subtitle="You may also like" />
+          <Products products={products} />
+        </Container>
+      </section>
     </>
   );
 }

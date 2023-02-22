@@ -1,0 +1,27 @@
+.cart__button {
+  position: relative;
+  font-size: 25px;
+  color: var(----primary-color);
+  background-color: transparent;
+  transition: transform var(--primary-animation);
+  border: none;
+  cursor: pointer;
+}
+
+.cart__button:hover,
+.cart__button:focus {
+  transform: scale(1.1, 1.1);
+}
+
+.cart__quantity {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: -8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--secondary-color);
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}

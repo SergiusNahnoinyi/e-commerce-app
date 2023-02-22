@@ -1,18 +1,28 @@
-import Heading from "@/components/Common/Heading";
 import Hero from "@/components/HomePage/Hero";
+
+import Container from "@/components/Common/Container";
+import Heading from "@/components/Common/Heading";
 import Products from "@/components/Common/Products";
 
 import { client } from "@/services/sanity";
 
+import styles from "./index.module.css";
+
 export default function Home({ products, banner }) {
   return (
     <>
-      <Hero hero={banner[0]} />
-      <Heading
-        title="Best Seller Products"
-        subtitle="Choose the best for you"
-      />
-      <Products products={products} />
+      <section className={styles.hero}>
+        <Hero hero={banner[0]} />
+      </section>
+      <section className={styles.products}>
+        <Container>
+          <Heading
+            title="Best Seller Products"
+            subtitle="Choose the best for you"
+          />
+          <Products products={products} />
+        </Container>
+      </section>
     </>
   );
 }
