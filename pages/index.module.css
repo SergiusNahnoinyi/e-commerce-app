@@ -1,6 +1,7 @@
 @media (min-width: 320px) {
   .hero {
     margin-bottom: 15px;
+    background-color: var(--secondary-background-color);
   }
 }
 

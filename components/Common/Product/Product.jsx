@@ -18,7 +18,6 @@ export default function Product({ product }) {
       >
         <Img
           {...imageProps}
-          style={{ maxWidth: "100%", height: "auto" }}
           placeholder="blur"
           blurDataURL={product.image[0].asset._ref}
           className={styles.product__image}
