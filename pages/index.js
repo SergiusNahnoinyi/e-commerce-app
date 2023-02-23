@@ -9,6 +9,9 @@ import { client } from "@/services/sanity";
 import styles from "./index.module.css";
 
 export default function Home({ products, banner }) {
+  if (!products || !banner)
+    return <h2 style={{ textAlign: "center" }}>Loading products ...</h2>;
+
   return (
     <>
       <section className={styles.hero}>
@@ -27,7 +30,7 @@ export default function Home({ products, banner }) {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const query = '*[_type == "product"]';
   const bannerQuery = '*[_type == "banner"]';
 
@@ -36,7 +39,8 @@ export const getServerSideProps = async () => {
     const banner = await client.fetch(bannerQuery);
 
     return {
-      props: { products, banner }
+      props: { products, banner },
+      revalidate: 5
     };
   } catch (error) {
     console.log(error);
