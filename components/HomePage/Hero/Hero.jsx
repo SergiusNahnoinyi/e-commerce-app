@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Img from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 
@@ -23,7 +24,9 @@ export default function Hero({ hero }) {
       <div className={styles.hero__description}>
         <h1 className={styles.hero__title}>{hero.saleTime}</h1>
         <h2 className={styles.hero__subtitle}>{hero.desc}</h2>
-        <Button title="Shop Now" variant="primary" />
+        <Link href="/product/headphones">
+          <Button title="Shop Now" variant="primary" />
+        </Link>
       </div>
     </Container>
   );
