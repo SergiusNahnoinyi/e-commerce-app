@@ -7,6 +7,7 @@ import styles from "./RemoveButton.module.css";
 
 export default function RemoveButton({ className, item }) {
   const { onRemove } = useStateContext();
+
   return (
     <button
       type="button"

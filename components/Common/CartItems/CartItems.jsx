@@ -3,10 +3,14 @@ import { AiOutlineShopping } from "react-icons/ai";
 import Button from "../Button";
 import CartItem from "../CartItem";
 
+import { useStateContext } from "@/context/StateContext";
+
 import clsx from "clsx";
 import styles from "./CartItems.module.css";
 
-export default function CartItems({ items, setShowCart, className }) {
+export default function CartItems({ items, className }) {
+  const { setShowCart } = useStateContext();
+
   if (!items || items.length === 0)
     return (
       <div style={{ textAlign: "center" }}>
