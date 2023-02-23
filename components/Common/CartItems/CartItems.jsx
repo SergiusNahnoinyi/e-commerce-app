@@ -32,7 +32,7 @@ export default function CartItems({ items, className }) {
         ))}
       </ul>
       <Button
-        title="Back to shop"
+        title="Back to the shop"
         variant="primary"
         onClick={() => setShowCart(false)}
       />
