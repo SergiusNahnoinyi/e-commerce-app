@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import styles from "./CartButton.module.css";
 
-export default function CartButton({ className, onClick }) {
+export default function CartButton({ className, onClick, quantity }) {
   return (
     <button
       type="button"
@@ -13,7 +13,7 @@ export default function CartButton({ className, onClick }) {
       onClick={onClick}
     >
       <AiOutlineShopping aria-hidden="true" />
-      <span className={styles.cart__quantity}>1</span>
+      <span className={styles.cart__quantity}>{quantity}</span>
     </button>
   );
 }

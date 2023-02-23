@@ -1,0 +1,19 @@
+.cart {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--secondary-background-color);
+  transition: var(----primary-animation);
+}
+
+.cart__container {
+  position: relative;
+  width: 75vw;
+  height: 100vh;
+  padding: 20px;
+  background-color: var(--primary-background-color);
+  overflow-y: scroll;
+  float: right;
+}
