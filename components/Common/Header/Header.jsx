@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import Container from "../Container";
 import CartButton from "../CartButton";
-import Cart from "../Cart";
+import Cart from "@/components/CartMenu/Cart";
 
 import { useStateContext } from "@/context/StateContext";
 

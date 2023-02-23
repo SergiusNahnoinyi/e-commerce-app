@@ -1,4 +1,4 @@
-import Button from "../Button";
+import Button from "@/components/Common/Button";
 
 import styles from "./CartPayment.module.css";
 

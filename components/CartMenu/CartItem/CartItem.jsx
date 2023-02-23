@@ -3,7 +3,7 @@ import Img from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 import { client } from "@/services/sanity";
 
-import RemoveButton from "@/components/Common/RemoveButton";
+import RemoveButton from "../RemoveButton";
 
 import styles from "./CartItem.module.css";
 

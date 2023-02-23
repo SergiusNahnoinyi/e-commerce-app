@@ -1,6 +1,7 @@
-import CartItems from "../CartItems";
 import Heading from "@/components/Common/Heading";
-import CartPayment from "@/components/Common/CartPayment";
+
+import CartItems from "../CartItems";
+import CartPayment from "../CartPayment";
 
 import { useStateContext } from "@/context/StateContext";
 

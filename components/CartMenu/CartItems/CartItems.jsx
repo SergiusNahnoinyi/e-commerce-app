@@ -1,6 +1,6 @@
 import { AiOutlineShopping } from "react-icons/ai";
 
-import Button from "../Button";
+import Button from "@/components/Common/Button";
 import CartItem from "../CartItem";
 
 import { useStateContext } from "@/context/StateContext";
