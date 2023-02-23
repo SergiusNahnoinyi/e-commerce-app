@@ -16,7 +16,7 @@ export default function Header() {
       <Container className={styles.header__container}>
         <Link href="/">E-commerce</Link>
         <CartButton
-          onClick={() => setShowCart(!showCart)}
+          onClick={() => setShowCart(true)}
           quantity={totalQuantities}
         />
         {showCart && <Cart />}

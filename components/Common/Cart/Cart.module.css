@@ -1,20 +1,18 @@
-@media (min-width: 320px) {
-  .cart {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+.cart {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--secondary-background-color);
+  transition: var(----primary-animation);
 }
 
-@media (min-width: 768px) {
-  .cart {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .cart {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
+.cart__container {
+  position: relative;
+  width: 75vw;
+  height: 100vh;
+  padding: 20px;
+  background-color: var(--primary-background-color);
+  float: right;
 }
