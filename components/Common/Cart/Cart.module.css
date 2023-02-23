@@ -14,5 +14,6 @@
   height: 100vh;
   padding: 20px;
   background-color: var(--primary-background-color);
+  overflow-y: scroll;
   float: right;
 }

@@ -1,0 +1,7 @@
+.remove {
+  font-size: 24px;
+  color: var(--accent-color);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
