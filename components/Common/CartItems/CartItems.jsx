@@ -17,7 +17,7 @@ export default function CartItems({ items, className }) {
         <AiOutlineShopping size={150} />
         <h2 style={{ marginBottom: "20px" }}>Your shopping bag is empty</h2>
         <Button
-          title="Back to shop"
+          title="Continue shopping"
           variant="primary"
           onClick={() => setShowCart(false)}
         />
