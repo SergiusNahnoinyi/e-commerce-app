@@ -3,6 +3,8 @@ import Head from "next/head";
 import Header from "../Header";
 import Footer from "../Footer";
 
+import { StateContext } from "@/context/StateContext";
+
 import styles from "./Layout.module.css";
 
 export default function Layout({ children }) {
@@ -18,9 +20,11 @@ export default function Layout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
-      <main className={styles.main}>{children}</main>
-      <Footer />
+      <StateContext>
+        <Header />
+        <main className={styles.main}>{children}</main>
+        <Footer />
+      </StateContext>
     </>
   );
 }
